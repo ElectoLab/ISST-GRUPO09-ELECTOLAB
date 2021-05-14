@@ -23,8 +23,8 @@ import org.glassfish.jersey.client.ClientConfig;
 
 import es.upm.dit.isst.electolab.model.USUARIO;
 
-@WebServlet("/BajaArchivoServlet")
-public class BajaArchivoServlet extends HttpServlet {
+@WebServlet("/BajaArchivoServlet3")
+public class BajaArchivoServlet3 extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -35,8 +35,8 @@ public class BajaArchivoServlet extends HttpServlet {
         String email = (String) (req.getParameter("usuarioemail"));
         USUARIO usuario = USUARIODAOImplementation.getInstance().read(email);
         resp.setContentType("application/csv");
-        resp.setHeader("Content-Disposition", String.format("attachment; filename=\"%s\"", "Simulacion1.csv"));
-        resp.setContentLength(usuario.getDocument().length);
-        resp.getOutputStream().write(usuario.getDocument());
+        resp.setHeader("Content-Disposition", String.format("attachment; filename=\"%s\"", "Simulacion3.csv"));
+        resp.setContentLength(usuario.getDocument3().length);
+        resp.getOutputStream().write(usuario.getDocument3());
     }
 }
